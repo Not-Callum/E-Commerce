@@ -16,8 +16,8 @@
       </div>
       <div class="drop-down-container">
         <button class="darkmode-button" id="darkmode-button"><img src="light_mode_24dp_E8EAED_FILL1_wght400_GRAD0_opsz24.svg"> <img src="dark_mode_24dp_E8EAED_FILL1_wght400_GRAD0_opsz24.svg"></button>
-        <button class="drop-down-button" id="currency-select">GBP <img src="down-arrow-5.svg" class="down-arrow"></button>
-        <button class="drop-down-button" id="language-select">ENG <img src="down-arrow-5.svg" class="down-arrow"></button>
+        <!-- <button class="drop-down-button" id="currency-select">GBP <img src="down-arrow-5.svg" class="down-arrow"></button>
+        <button class="drop-down-button" id="language-select">ENG <img src="down-arrow-5.svg" class="down-arrow"></button> -->
       </div>
       <div class="socials-container">
         <img src="fb-2.svg" alt="facebook-logo" id="fb-logo">
@@ -37,10 +37,18 @@
         <button class="search" id="search-button">Search</button>
       </div>
         <div class="account-container">
-          <div class="account">
+          <div class="account" onclick="loginPopUp()">
             <img src="account-25.svg" alt="account-logo" id="account-logo">
             <button id="account-button">Account</button>
+            <div class="login-popup" id="popup-login">
+              <button id="close-x" onclick="closeLoginPopUp(event)">x</button>
+              <div class="login">
+                <p>Login Name</p>
+                <input type="text">
+              </div>
+            </div>
           </div>
+          
         </div>
         <div class="shopping-wishlist-cart">
           <div class="wishlist">
@@ -58,13 +66,20 @@
 
     <section class="custom-search-section">
       <div class="categories-drop-down-container">
-        <button class="drop-down-button" id="categories-drop-down-button">Categories <img src="down-arrow-5.svg" class="down-arrow"></button>
-        <div class="dropdown_menu hide" id="categories-drop-down-menu">
-          <p>Category 1</p>
-          <p>Category 2</p>
-          <p>Category 3</p>
-          <p>Category 4</p>
-        </div>
+        <ul>
+          <li>
+            <a href="#">Categories</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Category</a></li>
+              <li><a href="#">Category</a></li>
+              <li><a href="#">Category</a></li>
+              <li><a href="#">Category</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        
+       
       </div>
       <div class="category-quick-links">
         <nav>

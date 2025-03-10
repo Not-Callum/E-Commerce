@@ -34,26 +34,60 @@ body{
   width: 100vw;
   background-color: var(--base-colour);
 }
+.categories-drop-down-container{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
 
-.dropdown_menu p{
+.categories-drop-down-container ul{
+  height: 100%;
+  width: 30%;
+  list-style: none;
+  background-color: var(--base-highlight);
+  display: flex;
+  align-items: center;
+}
+
+.categories-drop-down-container ul li{
+  display: inline-block;
+  position: relative;
+  color: var(--base-text-colour);
+  height: 100%;
+  width: 100%;
+}
+
+.categories-drop-down-container ul li a{
   display: block;
-  padding: 10px 15px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  height: 100%;
+  width: 100%;
 }
 
-.dropdown_menu{
-  animation: appear 0.2s;
-  background-color: var(--base-colour);
-  border: var(--base-border);
+.categories-drop-down-container ul li ul.dropdown-menu li{
+  display: block;
+  background-color: var(--base-hover);
+}
+
+.categories-drop-down-container ul li ul.dropdown-menu{
+  width: 100%;
+  background-color: var(--base-hover);
   position: absolute;
-  width: clamp(200px, 15%, 200px);
-  left: 2.5%;
-  top: 100%;
-  box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
-}
-
-.hide{
+  z-index: 999;
   display: none;
 }
+
+.categories-drop-down-container ul li a:hover{
+  background-color: var(--base-highlight-hover);
+}
+
+.categories-drop-down-container ul li:hover ul.dropdown-menu{
+  display: block;
+}
+
 /* Media querys start at 1632px width */
 /* HEADER */
 /* Contact Section */
@@ -108,21 +142,6 @@ background-color: var(--base-colour);
   position: absolute;
   left: 50%;
   color: var(--base-light-text-colour);
-}
-
-.drop-down-container{
-  display: flex;
-  justify-content: right;
-  width: 10%;
-  height: 100%;
-}
-
-.drop-down-button{
-  width: 35%;
-  height: 100%;
-  background-color: var(--base-colour);
-  border: 0;
-  border-right: 2px solid var(--base-border);
 }
 
 .darkmode-button{
@@ -242,12 +261,50 @@ margin-top: 5px;
 
 .account{
   display: flex;
+  position: relative;
   align-items: center;
   height: 80%;
 }
 
 .account:hover > #account-button, .account:hover, .account:hover > #account-logo{
   background-color: var(--base-hover);
+}
+
+.account-container .account .login-popup{
+  position: absolute;
+  top: 100%;
+  left: -150px;
+  display: none;
+  height: 150px;
+  width: 400px;
+  background-color: var(--base-hover);
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.185);
+}
+
+.login-popup #close-x:hover{
+  background-color: #863030;
+}
+
+.login-popup #close-x{
+  z-index: 999;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 25px;
+  width: 25px;
+  background-color: #a73838;
+  border: 0;
+}
+
+.login-popup .login{
+  width: 80%;
+  height: 40px;
+}
+
+.login-popup .login p{
+  width: fit-content;
 }
 
 #account-logo{

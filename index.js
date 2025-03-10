@@ -1,21 +1,23 @@
-const categoriesDropDownButton = document.getElementById("categories-drop-down-button");
 
-categoriesDropDownButton.addEventListener("click", () => {
-  const catDropDownMenu = document.getElementById("categories-drop-down-menu");
-  console.log(catDropDownMenu.matches(".hide"))
-  if (catDropDownMenu.matches(".hide")){
-    dropDownActivate(catDropDownMenu)
-  }
-  else{
-    dropDownDeactivate(catDropDownMenu)
+function loginPopUp(){
+  
+  if (window.getComputedStyle(document.getElementById("popup-login")).getPropertyValue("display") == "none"){
+    console.log(window.getComputedStyle(document.getElementById("popup-login")).getPropertyValue("display"))
+    document.getElementById("popup-login").style.display = "flex";
   }
   
-})
-
-function dropDownActivate(target){
-  target.classList.remove("hide");
+  
 }
 
-function dropDownDeactivate(target){
-  target.classList.add("hide");
+function closeLoginPopUp(e){
+  if (e == window.event){
+    e.cancelBubble = true;
+  }
+  if (e.stopPropagation){
+    e.stopPropagation();
+  }
+  if (window.getComputedStyle(document.getElementById("popup-login")).getPropertyValue("display") != "none"){
+    console.log("something happen")
+    document.getElementById("popup-login").style.display = "none";
+  }
 }
