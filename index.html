@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home-search.css">
   <title>E-Commerce Super Cool Wow</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
   <header>
@@ -44,7 +45,8 @@
               <button id="close-x" onclick="closeLoginPopUp(event)">x</button>
               <div class="login">
                 <p>Login Name</p>
-                <input type="text">
+                <input type="text" id="login-detail">
+                <button onclick="loginAttempt()">Login</button>
               </div>
             </div>
           </div>
@@ -212,5 +214,6 @@
   </section>
   <script src="darkmode.js" defer></script>
   <script src="index.js"></script>
+  
 </body>
 </html>
